@@ -29,19 +29,24 @@ public class Stack implements  SimpleStack{
 
     @Override
     public Item peek() throws EmptyStackException {
-        return (pile.get(this.size-1));
+        if (pile.isEmpty()){
+            throw new EmptyStackException();
+        }
+        else
+             return (pile.get(this.size-1));
     }
 
     @Override
     public Item pop() throws EmptyStackException {
-        if(this.size != 0) {
-            Item head = pile.get(size-1);
+        if(pile.isEmpty()) {
+           throw new EmptyStackException();
+        }
+        else {
+            Item head = pile.get(size - 1);
             this.pile.remove(size - 1);
             this.size -= 1;
             return head;
         }
-        else
-            return null;
 
     }
 

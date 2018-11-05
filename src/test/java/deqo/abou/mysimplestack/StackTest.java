@@ -23,19 +23,19 @@ import static org.junit.Assert.*;
 
         @Test
 
-        public void isEmpty() throws Exception {
+        public void testIsEmpty() throws Exception {
             assertTrue(stackEmpty.isEmpty());
             assertFalse(stack.isEmpty());
         }
 
         @Test
-        public void getSize() throws Exception {
+        public void testGetSize() throws Exception {
             assertEquals(stackEmpty.getSize(),0);
             assertEquals(stack.getSize(),1);
         }
 
         @Test
-        public void peek() throws Exception {
+        public void testPeekNotEmptyStack() throws Exception {
             stack.peek();
             assertFalse(stack.isEmpty());
             assertEquals(stack.getSize(),1);
@@ -47,7 +47,7 @@ import static org.junit.Assert.*;
             stackEmpty.peek();
         }
         @Test
-        public void pop() throws Exception {
+        public void testPopNotEmptyStack() throws Exception {
             stack.pop();
             assertTrue(stack.isEmpty());
             assertEquals(stack.getSize(),0);
